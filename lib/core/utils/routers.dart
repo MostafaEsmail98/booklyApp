@@ -4,14 +4,12 @@ import 'package:bookly/Features/homePage/presentation/manager/details_of_books/d
 import 'package:bookly/Features/homePage/presentation/views/widgets/book_details_view_body.dart';
 
 
-import 'package:bookly/Features/search/presentation/manager/search_of_books/search_of_books_cubit.dart';
 import 'package:bookly/Features/search/presentation/view/searchPage.dart';
 import 'package:bookly/Features/splash/presentation/view/splash.dart';
 import 'package:bookly/core/utils/service_locator.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../../Features/homePage/presentation/views/homePage.dart';
-import '../../Features/search/data/repo/search_repo_impl.dart';
 
 abstract class AppRouter {
   static final splash = GoRouter(
