@@ -9,13 +9,13 @@ import 'package:go_router/go_router.dart';
 class CustomBestSellerItem extends StatelessWidget {
   const CustomBestSellerItem(this.bookModel, {super.key});
 
- final Items bookModel;
+  final Items bookModel;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push("/bookView" , extra: bookModel);
+        GoRouter.of(context).push("/bookView", extra: bookModel);
       },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -30,9 +30,10 @@ class CustomBestSellerItem extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(16),
                   child: CachedNetworkImage(
-                    imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail??"",
+                    imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ?? "",
                     fit: BoxFit.fill,
-                    errorWidget: (context, url, error) => const Icon(Icons.error),
+                    errorWidget: (context, url, error) =>
+                        const Icon(Icons.error),
                   ),
                 ),
               ),
@@ -45,8 +46,8 @@ class CustomBestSellerItem extends StatelessWidget {
                   children: [
                     SizedBox(
                       width: MediaQuery.of(context).size.width * .5,
-                      child:  Text(
-                        bookModel.volumeInfo?.title??"",
+                      child: Text(
+                        bookModel.volumeInfo?.title ?? "",
                         style: Styles.textStyle20,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -55,8 +56,10 @@ class CustomBestSellerItem extends StatelessWidget {
                     const SizedBox(
                       height: 3,
                     ),
-                     Text(
-                      bookModel.volumeInfo?.authors?[0]??"",
+                    Text(
+                      bookModel.volumeInfo!.authors!.isEmpty
+                          ? ""
+                          : bookModel.volumeInfo?.authors?[0] ?? "",
                       style: Styles.textStyle14,
                     ),
                     const SizedBox(
