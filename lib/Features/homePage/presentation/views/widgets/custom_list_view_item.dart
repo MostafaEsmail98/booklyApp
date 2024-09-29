@@ -1,5 +1,4 @@
 import 'package:bookly/Features/homePage/data/models/BookModel.dart';
-import 'package:bookly/core/utils/images.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -24,7 +23,7 @@ class CustomListViewItem extends StatelessWidget {
             aspectRatio: 2.7 / 4,
             child: CachedNetworkImage(
               fit: BoxFit.fill,
-              imageUrl: bookModel.volumeInfo!.imageLinks!.thumbnail!,
+              imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail??"",
               errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
           ),

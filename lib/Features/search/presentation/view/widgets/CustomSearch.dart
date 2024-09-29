@@ -25,9 +25,9 @@ class CustomItem extends StatelessWidget {
                 });
           }
           else if (state is FailureState){
-            CustomError(errMessage: state.errMessage);
+          return  CustomError(errMessage: state.errMessage);
           }
-          return const Center(child: CircularProgressIndicator(),);
+          return const Center(child: Text("Type to search"),);
         }
     );
   }

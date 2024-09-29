@@ -1,6 +1,5 @@
 import 'package:bookly/Features/homePage/data/models/BookModel.dart';
 import 'package:bookly/Features/homePage/presentation/views/widgets/custom_rating_book.dart';
-import 'package:bookly/core/utils/images.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
@@ -8,9 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomBestSellerItem extends StatelessWidget {
-  CustomBestSellerItem(this.bookModel, {super.key});
+  const CustomBestSellerItem(this.bookModel, {super.key});
 
-  Items bookModel;
+ final Items bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +30,7 @@ class CustomBestSellerItem extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(16),
                   child: CachedNetworkImage(
-                    imageUrl: bookModel.volumeInfo!.imageLinks!.thumbnail!,
+                    imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail??"",
                     fit: BoxFit.fill,
                     errorWidget: (context, url, error) => const Icon(Icons.error),
                   ),
@@ -47,7 +46,7 @@ class CustomBestSellerItem extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * .5,
                       child:  Text(
-                        bookModel.volumeInfo!.title!,
+                        bookModel.volumeInfo?.title??"",
                         style: Styles.textStyle20,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -57,7 +56,7 @@ class CustomBestSellerItem extends StatelessWidget {
                       height: 3,
                     ),
                      Text(
-                      bookModel.volumeInfo!.authors![0],
+                      bookModel.volumeInfo?.authors?[0]??"",
                       style: Styles.textStyle14,
                     ),
                     const SizedBox(
