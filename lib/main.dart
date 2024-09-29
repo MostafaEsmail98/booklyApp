@@ -1,8 +1,6 @@
 import 'package:bookly/Features/homePage/data/repo/home_repo_impl.dart';
 import 'package:bookly/Features/homePage/presentation/manager/data_of_best_seller/best_seller_cubit.dart';
 import 'package:bookly/Features/homePage/presentation/manager/data_of_featured_books/featured_books_cubit.dart';
-import 'package:bookly/Features/search/data/repo/search_repo_impl.dart';
-import 'package:bookly/Features/search/presentation/manager/search_of_books/search_of_books_cubit.dart';
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/routers.dart';
 import 'package:bookly/core/utils/service_locator.dart';
@@ -24,10 +22,6 @@ class BooklyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (context) => SearchOfBooksCubit(getIt.get<SearchRepoImpl>())
-            ..fetchSearchOfBooks(),
-        ),
         BlocProvider(
             create: (context) => FeaturedBooksCubit(getIt.get<HomeRepoImpl>())
               ..fetchFeaturedBooks()),

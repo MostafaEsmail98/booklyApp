@@ -17,26 +17,26 @@ class SearchPageBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => SearchCubit(SearchRepoImpl(ApiServices(Dio()))),
-      child: SafeArea(
+      child: const SafeArea(
         child: Scaffold(
           body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: EdgeInsets.symmetric(horizontal: 8.0),
             child: Column(
               children: [
                 SearchBarTextField(),
-                const SizedBox(
+                SizedBox(
                   height: 5,
                 ),
-                const Align(
+                Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "Search Result",
                       style: Styles.textStyle16,
                     )),
-                const Expanded(
+                Expanded(
                   child: CustomItem(),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 5,
                 ),
               ],
