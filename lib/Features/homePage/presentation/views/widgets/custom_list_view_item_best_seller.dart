@@ -61,6 +61,8 @@ class CustomBestSellerItem extends StatelessWidget {
                           ? ""
                           : bookModel.volumeInfo?.authors?[0] ?? "",
                       style: Styles.textStyle14,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                     const SizedBox(
                       height: 3,
