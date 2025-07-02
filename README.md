@@ -1,16 +1,55 @@
-# bookly
+# 📚 Bookly App
 
-A new Flutter project.
+## 📝 About  
+**Bookly App** is a modern and user-friendly book discovery application built with **Flutter** using the **MVVM architecture** and **Bloc/Cubit** for state management.  
+It allows users to browse, search, and view details of thousands of free books retrieved from a public API. The app is designed to deliver a smooth reading experience with a clean UI and responsive layout.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🌟 Features  
+- 📖 Browse thousands of books from a free public API.  
+- 🔍 Search for books by title or author.  
+- 📘 View detailed book information including title, author, image, and description.   
+- 🧭 Smooth navigation with structured MVVM layers.  
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🧱 Architecture Overview  
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The app follows the **Clean MVVM Architecture**, promoting separation of concerns and scalable project structure:
+
+lib/
+  - ├── core/ # Common resources (theme, constants, error handling)
+  - ├── features/
+  -    │ └── home/
+             -├── data/
+             -├── presentation/
+  - ├── services/ # API service, network checker, dependency injection
+  - ├── main.dart # App entry point
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| 💙 Flutter | UI development |
+| 🎯 Dart | Programming language |
+| 🧠 Bloc/Cubit | State management |
+| 🏗️ MVVM | Architecture pattern |
+| 🌐 Free Books API | Fetch book data |
+| 📡 Dio | HTTP client |
+| 🧩 GetIt | Dependency injection |
+| 🗃️ Cached Network Image | Image caching for smooth UX |
+
+---
+
+## 🌐 API  
+This app uses a free public books API to fetch data.  
+Example: [Google Books API](https://developers.google.com/books)
+
+## 📸 Screenshots 
+
+
+https://github.com/user-attachments/assets/3c8ab9cf-a296-4777-aeef-deb7c4dc66f5
+
+
